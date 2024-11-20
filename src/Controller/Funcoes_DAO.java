@@ -1,6 +1,7 @@
 package Controller;
 
 import View.Inicio_GUI;
+import static View.Inicio_GUI.cod2_txt;
 import static View.Inicio_GUI.cod_txt;
 import static View.Inicio_GUI.email2_txt;
 import static View.Inicio_GUI.email_txt;
@@ -206,5 +207,54 @@ public class Funcoes_DAO {
         }
 
         // fim
+    }
+
+    public static void excluir() {
+        Model.Conecta_DB.carregaDriver(); // Carregando o driver 
+
+        // int codigo = Integer.valueOf(cod2_txt.getText()); // Recebendo o código 
+        try {// Tratamento de erro para a conexao 
+
+            // Declarando  a variavel de conexão con 
+            // e estabelendo a conexão 
+            Connection con = null;
+
+            try {
+
+                con = (Connection) DriverManager.getConnection(url, username, password);
+
+            } catch (SQLException ex) {
+
+                Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+
+            }
+
+            // Criando String com comando SQL para exclusão 
+            String sql = "DELETE FROM cliente WHERE cli_cod = " + cod2_txt.getText();
+
+            try // Tratamento de erros para exclusão 
+            {// Criando Variavel para executar a ação 
+
+                PreparedStatement excluir = (PreparedStatement) con.prepareStatement(sql);
+
+                excluir.execute();// Executando a exclusão 
+
+                JOptionPane.showMessageDialog(null, "\nExclusão realizada com sucesso!!!\n", "", -1);
+
+                cod2_txt.setText("");
+
+            } catch (Exception ex) {
+
+                JOptionPane.showMessageDialog(null, "\nErro na exclusão!", "ERRO!", 0);
+
+            }
+
+        } catch (NumberFormatException erro) { // Codigo digitado com caracteres não numericos 
+
+            JOptionPane.showMessageDialog(null, "Digite o código corretamante", "ERRO", 0);
+
+            cod2_txt.setText("");
+
+        }
     }
 }

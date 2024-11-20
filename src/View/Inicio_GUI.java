@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Laboratorio-Info
@@ -47,6 +49,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
         alterar_btn = new javax.swing.JButton();
         consultar_btn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        cod2_txt = new javax.swing.JTextField();
+        excluir_btn = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         nome_txt = new javax.swing.JTextField();
@@ -138,16 +143,28 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consultar/alterar", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
-        );
+        jPanel4.setLayout(null);
+
+        jLabel9.setText("Código");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(150, 50, 45, 14);
+
+        cod2_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cod2_txtActionPerformed(evt);
+            }
+        });
+        jPanel4.add(cod2_txt);
+        cod2_txt.setBounds(120, 70, 90, 20);
+
+        excluir_btn.setText("Excluir");
+        excluir_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluir_btnActionPerformed(evt);
+            }
+        });
+        jPanel4.add(excluir_btn);
+        excluir_btn.setBounds(120, 100, 90, 23);
 
         jTabbedPane1.addTab("Excluir", jPanel4);
 
@@ -248,6 +265,20 @@ public class Inicio_GUI extends javax.swing.JFrame {
         Controller.Funcoes_DAO.consultar();
     }//GEN-LAST:event_consultar_btnActionPerformed
 
+    private void cod2_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cod2_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cod2_txtActionPerformed
+
+    private void excluir_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_btnActionPerformed
+        String x = JOptionPane.showInputDialog(null, "Desejar Apagar Registros \n 1- sim \n 2-não");
+        int op = Integer.parseInt(x);
+        if (op == 1) {
+            Controller.Funcoes_DAO.excluir();
+        } else {
+            JOptionPane.showMessageDialog(null, "Exclusão cancelada");
+        }
+    }//GEN-LAST:event_excluir_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -288,11 +319,13 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JButton alterar_btn;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
+    public static javax.swing.JTextField cod2_txt;
     public static javax.swing.JTextField cod_txt;
     private javax.swing.JButton consultar_btn;
     public static javax.swing.JTextField email2_txt;
     public static javax.swing.JTextField email_txt;
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JToggleButton excluir_btn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -302,6 +335,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public static javax.swing.JPanel jPanel3;
