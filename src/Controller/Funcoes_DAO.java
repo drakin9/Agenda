@@ -64,8 +64,11 @@ public class Funcoes_DAO {
             JOptionPane.showMessageDialog(null, "Digite os dados corretamente", "ERRO", 0);
             tel_txt.setText("");
         }
-
+        //-->fim
     }
 
-    //-->fim
+    public static void consultar(){
+    
+    
+    }
 }
