@@ -36,6 +36,15 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        tel2_txt = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        cod_txt = new javax.swing.JTextField();
+        nome2_txt = new javax.swing.JTextField();
+        email2_txt = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        consultar_btn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -83,6 +92,39 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(10, 10, 375, 87);
+
+        jLabel5.setText("Código");
+        jPanel3.add(jLabel5);
+        jLabel5.setBounds(20, 120, 60, 14);
+        jPanel3.add(tel2_txt);
+        tel2_txt.setBounds(70, 240, 170, 20);
+
+        jLabel6.setText("Nome");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(20, 160, 50, 14);
+        jPanel3.add(cod_txt);
+        cod_txt.setBounds(70, 120, 40, 20);
+        jPanel3.add(nome2_txt);
+        nome2_txt.setBounds(70, 160, 170, 20);
+        jPanel3.add(email2_txt);
+        email2_txt.setBounds(70, 200, 170, 20);
+
+        jLabel7.setText("Email");
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(20, 200, 50, 14);
+
+        jLabel8.setText("Telefone");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(20, 240, 60, 14);
+
+        consultar_btn.setText("Consultar");
+        consultar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultar_btnActionPerformed(evt);
+            }
+        });
+        jPanel3.add(consultar_btn);
+        consultar_btn.setBounds(270, 160, 110, 60);
 
         jTabbedPane1.addTab("Consultar/alterar", jPanel3);
 
@@ -188,6 +230,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         Controller.Funcoes_DAO.cadastrar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void consultar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_btnActionPerformed
+        Controller.Funcoes_DAO.consultar();
+    }//GEN-LAST:event_consultar_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +273,9 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JButton Sair_btn;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
+    public static javax.swing.JTextField cod_txt;
+    private javax.swing.JButton consultar_btn;
+    public static javax.swing.JTextField email2_txt;
     public static javax.swing.JTextField email_txt;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
@@ -234,14 +283,20 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    public static javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
+    public static javax.swing.JTextField nome2_txt;
     public static javax.swing.JTextField nome_txt;
+    public static javax.swing.JTextField tel2_txt;
     public static javax.swing.JTextField tel_txt;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
