@@ -125,7 +125,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(alterar_btn);
-        alterar_btn.setBounds(270, 200, 110, 30);
+        alterar_btn.setBounds(270, 160, 110, 30);
 
         consultar_btn.setText("Consultar");
         consultar_btn.addActionListener(new java.awt.event.ActionListener() {
