@@ -1,0 +1,12 @@
+DROP DATABASE APRENDER;
+CREATE DATABASE APRENDER;
+USE APRENDER;
+
+CREATE TABLE cliente(
+cli_cod integer AUTO_INCREMENT NOT NULL,
+cli_nome Varchar(50) NOT NULL,
+cli_email Varchar(50) NOT NULL,
+cli_tel bigint(15) NOT NULL,
+PRIMARY KEY(cli_cod));
+
+INSERT INTO cliente VALUES(001,"fernando","Fernando@uol.com",118859647);
