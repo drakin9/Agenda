@@ -44,6 +44,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         email2_txt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        alterar_btn = new javax.swing.JButton();
         consultar_btn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -117,6 +118,15 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel3.add(jLabel8);
         jLabel8.setBounds(20, 240, 60, 14);
 
+        alterar_btn.setText("Alterar");
+        alterar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alterar_btnActionPerformed(evt);
+            }
+        });
+        jPanel3.add(alterar_btn);
+        alterar_btn.setBounds(270, 200, 110, 30);
+
         consultar_btn.setText("Consultar");
         consultar_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +134,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(consultar_btn);
-        consultar_btn.setBounds(270, 160, 110, 60);
+        consultar_btn.setBounds(270, 120, 110, 30);
 
         jTabbedPane1.addTab("Consultar/alterar", jPanel3);
 
@@ -230,6 +240,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         Controller.Funcoes_DAO.cadastrar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void alterar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterar_btnActionPerformed
+        Controller.Funcoes_DAO.alterar();
+    }//GEN-LAST:event_alterar_btnActionPerformed
+
     private void consultar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_btnActionPerformed
         Controller.Funcoes_DAO.consultar();
     }//GEN-LAST:event_consultar_btnActionPerformed
@@ -271,6 +285,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Sair_btn;
+    private javax.swing.JButton alterar_btn;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
     public static javax.swing.JTextField cod_txt;
