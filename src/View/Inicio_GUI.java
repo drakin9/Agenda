@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,6 +64,10 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Sair_btn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        atestado_btn = new javax.swing.JButton();
+        ticket_btn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -224,6 +230,32 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cadastrar", jPanel1);
 
+        jPanel5.setLayout(null);
+
+        jButton2.setText("Relatorio BD");
+        jPanel5.add(jButton2);
+        jButton2.setBounds(130, 150, 130, 23);
+
+        atestado_btn.setText("Atestado");
+        atestado_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atestado_btnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(atestado_btn);
+        atestado_btn.setBounds(130, 100, 130, 23);
+
+        ticket_btn.setText("Ticket");
+        ticket_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ticket_btnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(ticket_btn);
+        ticket_btn.setBounds(130, 50, 130, 23);
+
+        jTabbedPane1.addTab("relatorio", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -279,6 +311,18 @@ public class Inicio_GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_excluir_btnActionPerformed
 
+    private void ticket_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticket_btnActionPerformed
+        Controller.Ticket_DAO.impressao();
+    }//GEN-LAST:event_ticket_btnActionPerformed
+
+    private void atestado_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atestado_btnActionPerformed
+        try {
+            Controller.Press_DAO.imprime();
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_atestado_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +361,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Sair_btn;
     private javax.swing.JButton alterar_btn;
+    private javax.swing.JButton atestado_btn;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
     public static javax.swing.JTextField cod2_txt;
@@ -327,6 +372,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JToggleButton excluir_btn;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -340,6 +386,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     public static javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -347,6 +394,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     public static javax.swing.JTextField nome_txt;
     public static javax.swing.JTextField tel2_txt;
     public static javax.swing.JTextField tel_txt;
+    private javax.swing.JButton ticket_btn;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
