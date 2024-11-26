@@ -319,7 +319,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         try {
             Controller.Press_DAO.imprime();
         } catch (Exception ex) {
-            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Deu errado ai");
         }
     }//GEN-LAST:event_atestado_btnActionPerformed
 
